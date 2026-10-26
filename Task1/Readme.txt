@@ -1,24 +1,25 @@
-Инструкция к 1 заданию:
+Task1: astronomy image generation with Stable Diffusion 1.5 and LoRA
 
-1. Не пытайтесь запустить код обучения локально, в колабе, в датахабе от Инно. Единственный способ адекватного запуска - каггл с 2 ГПУ. Либо надо понижать параметры.
+Setup and command-line examples: see INFERENCE.md.
 
-2. Сохранены 2 и 3 чекпоинты (считаю их самыми адекватными) и 10 чекпоинт (самый рофл). Чтобы проверить, как оно все работает, в nasa512.ipynb запустите 5 последних ячеек, начиная с комментария "Run this cell and the cells below for inference". Первые ячейки и обучение для генерации не нужны. Рабочая папка должна быть корнем репозитория или Task1. CSV для генерации не требуется.
-
-3. В последние 2 ячейки можете вписать свои промты, в 5 с конца можете выбрать чекпоинт. Если нужно что-то адекватное, то оставьте 2 или поставьте 3. Если нужны крабы мутанты по промту взлетающей ракеты, то выбирайте 10.
-
-Лог обучения в каггле (лишние блоки там не удалены):
-https://www.kaggle.com/code/vladimirtoporkov/nasa256
-
-Зависимости для генерации (Python 3.10):
-Для NVIDIA GPU сначала установите PyTorch с подходящей версией CUDA по официальной инструкции:
-https://pytorch.org/get-started/previous-versions/#v280
-Например, для CUDA 12.6:
+Use Python 3.10. Install PyTorch for your device first. The tested NVIDIA CUDA 12.6 build is:
 python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu126
 
-Затем установите зависимости для генерации:
+From the repository root, install the package and notebook dependencies:
+python -m pip install -e .
 python -m pip install -r Task1/requirements-inference.txt
-Если рабочая папка - Task1, используйте requirements-inference.txt без префикса Task1/.
-В редакторе ноутбука выберите окружение Python, в которое установлены зависимости.
 
-При первом запуске скачиваются базовые компоненты Stable Diffusion 1.5 с Hugging Face. Локально сохранены только LoRA-адаптеры.
-Для генерации используется зеркало https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5 вместо недоступного runwayml/stable-diffusion-v1-5.
+For notebook inference, select that Python environment and run the last five cells of nasa512.ipynb, starting with "Run this cell and the cells below for inference". Training cells and the CSV are not required. After editable installation, inference works from the repository root or Task1 directory.
+
+Change checkpoint_name in the first inference cell to select checkpoint-2, checkpoint-3, or checkpoint-10. Change the prompts in the final example cells to generate your own images.
+
+The original experiment notes recommend checkpoints 2 and 3. Checkpoint 10 is included as an example of degraded generation. This is a qualitative observation, not a controlled quality benchmark.
+
+The first run downloads the base SD 1.5 components from:
+https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
+The local checkpoint directories contain LoRA adapters only.
+
+The original training run used Kaggle with two T4 GPUs. Local training requires adapting the configuration.
+
+Original training log:
+https://www.kaggle.com/code/vladimirtoporkov/nasa256
