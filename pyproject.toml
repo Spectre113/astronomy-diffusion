@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "astronomy-diffusion"
 version = "0.1.0"
-description = "LoRA inference for astronomy image generation with Stable Diffusion."
+description = "LoRA inference for astronomy image generation and inpainting with Stable Diffusion."
 requires-python = ">=3.10"
 dependencies = [
     "torch==2.8.0",
@@ -21,6 +21,7 @@ dependencies = [
 
 [project.scripts]
 astronomy-generate = "astronomy_diffusion.text_to_image:main"
+astronomy-inpaint = "astronomy_diffusion.inpainting:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
