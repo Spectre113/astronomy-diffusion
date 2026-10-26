@@ -62,4 +62,4 @@ In the Python API, `seed=None` continues the current torch random-number stream,
 
 ## Notebook
 
-For plots, install `python -m pip install -r Task2/requirements-inference.txt` and select the same Python environment in your notebook editor. Run the last two cells of `iigenerator.ipynb`. They call the installed module; no training cells are required.
+From the repository root, install the notebook extras with `python -m pip install -e ".[notebooks]"` and select the same Python environment in your notebook editor. Run the last two cells of `iigenerator.ipynb`. They call the installed module; no training cells are required.

@@ -6,8 +6,7 @@ Use Python 3.10. Install PyTorch for your device first. The tested NVIDIA CUDA 1
 python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu126
 
 From the repository root, install the package and notebook dependencies:
-python -m pip install -e .
-python -m pip install -r Task1/requirements-inference.txt
+python -m pip install -e ".[notebooks]"
 
 For notebook inference, select that Python environment and run the last five cells of nasa512.ipynb, starting with "Run this cell and the cells below for inference". Training cells and the CSV are not required. After editable installation, inference works from the repository root or Task1 directory.
 

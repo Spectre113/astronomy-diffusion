@@ -19,6 +19,12 @@ dependencies = [
     "tqdm==4.67.1",
 ]
 
+[project.optional-dependencies]
+notebooks = [
+    "matplotlib==3.10.7",
+    "ipykernel==6.30.1",
+]
+
 [project.scripts]
 astronomy-generate = "astronomy_diffusion.text_to_image:main"
 astronomy-inpaint = "astronomy_diffusion.inpainting:main"

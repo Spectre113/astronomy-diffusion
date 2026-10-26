@@ -38,4 +38,4 @@ The module preserves the notebook's DDPM sampling, FP32 model loading, 512x512 r
 
 ## Notebook
 
-For plots, install `python -m pip install -r Task1/requirements-inference.txt` and select the same Python environment in your notebook editor. Run the last five cells of `nasa512.ipynb`. Those cells call the installed module; no training cells are required.
+From the repository root, install the notebook extras with `python -m pip install -e ".[notebooks]"` and select the same Python environment in your notebook editor. Run the last five cells of `nasa512.ipynb`. Those cells call the installed module; no training cells are required.
