@@ -12,8 +12,6 @@ For notebook inference, select that Python environment and run the last five cel
 
 Change checkpoint_name in the first inference cell to select checkpoint-2, checkpoint-3, or checkpoint-10. Change the prompts in the final example cells to generate your own images.
 
-The original experiment notes recommend checkpoints 2 and 3. Checkpoint 10 is included as an example of degraded generation. This is a qualitative observation, not a controlled quality benchmark.
-
 The first run downloads the base SD 1.5 components from:
 https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
 The local checkpoint directories contain LoRA adapters only.
